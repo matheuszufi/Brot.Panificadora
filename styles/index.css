@@ -25,18 +25,24 @@
     height: 30px;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(2px);
+    justify-content: right;
 }
 
 #navbar-top ul { 
-font-size: 12px;
+font-size: 16px;
 display: flex; 
 color: white; 
 display: flex;
 justify-content: center;
 align-items: center;
+margin-right: 16vw;
 }
-
-#navbar-top ul li {padding: 8px;}
+#navbar-top ul #division-navtop {
+    width: 1px;     
+    height: 20px;
+    background-color: white;
+}
+#navbar-top ul li {padding: 8px; list-style: none;}
 
 #navbar-bottom {
     display: flex;
@@ -138,6 +144,9 @@ align-items: center;
     filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.615));
     transition: 0.4s;
 
+}
+#content-hero img:hover {
+    scale: 1.2;
 }
 
 #content-about {
@@ -283,6 +292,26 @@ align-items: center;
     font-weight: 300;
     font-size: 24px;
 }
+#content-lousa {
+    border-radius: 4px;
+    background: url(../assets/imgs/lousa.png);
+    background-size: cover;
+    width: 320px;
+    height: 320px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin: 32px 48px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+#division-lousa {
+width: 260px;
+height: 1px;
+background-color: rgb(255, 255, 255);
+
+}
 #content-address img{
     border-radius: 4px;
     width: 350px;
@@ -305,6 +334,69 @@ align-items: center;
     justify-content: center;
 }
 
+
+#content-recado {
+    width: 100%;
+    background-color: #39342d;
+    color: white;
+    padding: 40px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+#content-recado-right form {
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    width: 500px;
+}
+#content-recado-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 500px;
+    /* background-color: red; */
+}
+#content-recado-left img {
+    width: 500px;
+}
+#name-email {display: flex;}
+#name-email label {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+}
+#name-email label input {
+    width: 10%;
+    height: 40px;
+    border: none;
+    border-radius: 2px;
+    
+}
+#content-recado-right form label input {
+    height: 40px;
+    border: none;
+    width: 99%;
+    border-radius: 2px;
+}
+
+#content-recado-right form label textarea{ 
+    width: 99%;
+    border-radius: 2px;
+    height: 200px;
+}
+
+#content-recado-right form button {
+    height: 48px;
+    width: 200px;
+}
+
 footer {
     width: 100%;
     height: 100px;
@@ -316,6 +408,7 @@ footer {
     align-items: center;
     font-weight: 200;
     font-size: 12px;
+    font-style: italic;
 }
 
 #list-content-menu::-webkit-scrollbar {
@@ -408,7 +501,7 @@ footer {
         width: 300px;
     }
     #content-address{  
-        /* padding: 0; */
+        padding: 12px 12px;
     }
     #content-about {
         margin-top: 80px;
@@ -416,5 +509,15 @@ footer {
     #content-about-right img {
         width: 140px;
     }
-    
-}
+    #content-lousa {
+        margin: 32px 0px;
+        width: 280px;
+        height: 280px;
+    }
+    #content-recado-left img {
+        width: 350px;
+    }
+    #content-recado-right form {
+
+        width: 350px;
+    }
