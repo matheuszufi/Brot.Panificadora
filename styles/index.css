@@ -4,6 +4,7 @@
     font-family: 'Roboto';
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
     box-sizing: border-box;
 }
 
@@ -84,9 +85,15 @@ align-items: center;
     height: 100%;
     align-items: center ;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    transition: 0.4s;
 }
-
-
+#navbar-list ul li:hover {
+    background-color: rgba(245, 245, 245, 0.5);
+}
+#navbar-list ul li a {
+    color: white;
+    text-decoration: none;
+}
 
 #navbar-list-hidden {
     display: none;
@@ -107,7 +114,7 @@ align-items: center;
 
 
 #content-hero {
-    margin-top: 40px;
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,6 +139,94 @@ align-items: center;
     transition: 0.4s;
 
 }
+
+#content-about {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    padding: 80px;
+    margin-top: 40px;
+    /* background-color: rgba(223, 191, 148, 0.4); */
+    /* flex-direction: column; */
+}
+#content-about-first {display: flex;flex-wrap: wrap;}
+#content-about-left, #content-about-right {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    /* text-align: justify; */
+    /* margin: 24px; */
+    color: rgb(68, 68, 68)
+}
+#content-about-left-top, #content-about-left-bottom {
+    margin: 12px;
+    /* background-color: red; */
+}
+#content-about-right {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    
+    /* background-color: rgba(255, 0, 0, 0.598); */
+    width: 800px;
+}
+#content-about-right img {
+    width: 260px;
+    margin: -24px;
+    box-shadow: 1px 1px 4px black;
+    transition: 0.4s;
+}
+#content-about-right img:hover {
+    scale: 1.2;
+}
+
+#content-about-left h1, #content-about-right h1 {font-weight: 400;}
+#content-about-left h1 span, #content-about-right h1 span {font-weight: 600;}
+#content-about-left p span, #content-about-right p span {font-weight: 600;}
+
+#division-about {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(46, 46, 46);
+}
+
+#content-about-complement {
+    width: 100%;
+    color: rgb(68, 68, 68);
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+#about-item {
+    width: 140px;
+    text-align: center;
+    margin: 20px;
+    transition: 0.4s;
+}
+
+#about-item:hover {
+    scale: 1.2;
+}
+
+#about-item h1 {
+    font-size: 52px;
+    font-weight: 400;
+}
+
+#about-item h1 span {
+    font-size: 32px;
+      color: rgb(130, 130, 130);
+}
+
+
+
+
+
+
 
 #content-menu {
     display: flex;
@@ -164,6 +259,7 @@ align-items: center;
     flex-wrap: wrap;
     /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6), inset 0px 2px 0px rgba(0, 0, 0, 0.13); */
 }
+#back {z-index: -1;}
 #escrita {
     width: 500px;
     margin-top: 40px;
@@ -239,7 +335,12 @@ footer {
     background-color: #cd9f7a;
   }
   
+  @media only screen and (max-width: 1560px) {  
+    #content-about-right img {
 
+        margin-top: 40px;
+    }
+  }
 @media only screen and (max-width: 1200px) {    
     #content-hero {
     height: 380px;
@@ -273,20 +374,28 @@ footer {
     #content-address-imgs div iframe{
         width: 400px;
     }
+    #content-about {
+        padding: 40px
+    }
+    #content-about-right img {
+        width: 196px;
+        margin-top: 40px;
+    }
+
 }
 
 @media only screen and (max-width: 500px) {
     #content-hero {
         height: 180px;
-        margin-top: 40px;
+        margin-top: 120px;
         /* box-shadow: 0px 0px 0px black; */
     }
     #content-menu {margin-top: 80px;}
     #content-hero img {
-        width: 300px;
+        width: 280px;
     }
 
-    #content-video {margin-top: 80px;}
+    #content-video {margin-top: 40px;}
     #content-address img{
         width: 300px;
         margin: 20px 0px;
@@ -301,7 +410,11 @@ footer {
     #content-address{  
         /* padding: 0; */
     }
-    
-    
+    #content-about {
+        margin-top: 80px;
+    }
+    #content-about-right img {
+        width: 140px;
+    }
     
 }
