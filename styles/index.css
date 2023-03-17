@@ -145,9 +145,9 @@ align-items: center;
     transition: 0.4s;
 
 }
-#content-hero img:hover {
+/* #content-hero img:hover {
     scale: 1.2;
-}
+} */
 
 #content-about {
     width: 100%;
