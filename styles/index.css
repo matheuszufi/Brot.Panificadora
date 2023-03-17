@@ -222,6 +222,24 @@ footer {
     font-size: 12px;
 }
 
+#list-content-menu::-webkit-scrollbar {
+
+    width: 10px;
+    height: 8px;
+    background-color: #f5f5f5;
+    /* border-radius: 0px; */
+  }
+  
+  #list-content-menu::-webkit-scrollbar-thumb {
+    background-color:  rgba(223, 191, 148, 0.9);
+    /* border-radius: 10px; */
+  }
+  
+  #list-content-menu::-webkit-scrollbar-thumb:hover {
+    background-color: #cd9f7a;
+  }
+  
+
 @media only screen and (max-width: 1200px) {    
     #content-hero {
     height: 380px;
