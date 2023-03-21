@@ -1,11 +1,13 @@
 const whatspopup = document.getElementById('popupwhats')
 const whatsmodal = document.getElementById('popupwhatsmodal')
 const whatsmodalheader = document.getElementById('popupwhatsmodal-header')
+const whatsmodalbody = document.getElementById('popupwhatsmodal-body')
 
 whatspopup.addEventListener('click', () => {
     if (whatsmodal.style.display === 'flex') {
-        whatsmodal.style.height = '0px';
+     
         whatsmodalheader.style.opacity = '0'
+        whatsmodalbody.style.opacity = '0'
         setTimeout(closemodalfx, 700)
        
     } else {
@@ -18,16 +20,22 @@ whatspopup.addEventListener('click', () => {
 })
 
 function closemodalfx() {
-    whatsmodal.style.display = 'none';
+    whatsmodal.style.height = '0px';
+
+    setTimeout(closemodalfx2, 300)
 
 }
 
 function openmodalfx() {
     whatsmodal.style.height = '350px';
-    setTimeout(openmodalheaderfx, 200)
+    setTimeout(openmodalheaderfx, 400)
 }
 
 function openmodalheaderfx() {
     whatsmodalheader.style.opacity = '1'
+    whatsmodalbody.style.opacity = '1'
 }
 
+function closemodalfx2() {
+    whatsmodal.style.display = 'none';
+}

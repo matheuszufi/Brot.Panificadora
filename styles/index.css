@@ -484,6 +484,10 @@ footer i {
     margin-left: -280px;
     transition: 0.4s;
     z-index: 1000;
+    bottom: 100px;
+    right: 24px;
+    flex-direction: column;
+
 }
 
 
@@ -493,11 +497,54 @@ footer i {
     background-color: rgb(90,193,0);
     transition: 0.4s;
     opacity: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 32px;
+    color: white;
 }
 
+#popupwhatsmodal-header h1 {
+    font-size: 32px;
+}
+#popupwhatsmodal-body {
+    width: 100%;
+    /* background-color: red; */
+    height: 100%;
+    display: flex;
+      opacity: 0;
+    /* align-items: center; */
+    flex-direction: column;
+    justify-content: center;
+}
+#popupwhatsmodal-body h4 {
+    margin: 0px 12px;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 14px;
+    color: #7f7e7d;
 
-
-
+}
+#popupwhatsmodal-body a {
+    text-decoration: none;
+}
+#popupwhatsmodal-body div {
+    width: 300px;
+    height: 80px;
+    margin: 12px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(246, 247, 250);
+    color: rgb(57, 58, 72);
+    font-weight: 400;
+}
+#popupwhatsmodal-body div p {display: flex;justify-content: center;align-items: center;}
+#popupwhatsmodal-body div p i {
+    font-size: 36px;
+    color: rgb(90,193,0);
+    padding: 12px;
+}
 
 
 
@@ -594,4 +641,9 @@ footer i {
 
         width: 350px;
     }
+
+    
+#popupwhatsmodal{
+    right: 12px;
+}
 }
