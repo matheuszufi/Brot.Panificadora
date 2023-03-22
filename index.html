@@ -245,20 +245,20 @@
                         <h1>FALE CONOSCO</h1>
                         <br>
                         <div id="name-email">
-                            <label for="">Nome: * 
-                                <input type="text">
+                            <label for="name">Nome: * 
+                                <input name="name" type="text">
                             </label>
-                            <label for="">Email: * 
-                                <input type="email">
+                            <label for="email">Email: * 
+                                <input name="email" type="email">
                             </label>
                         </div>
                         <br>
-                        <label for="">Assunto: * 
-                            <input type="text">
+                        <label for="assunto">Assunto: * 
+                            <input name="assunto" type="text">
                         </label>
                         <br>
-                        <label for="">Mensagem: * 
-                            <textarea></textarea>
+                        <label for="msg">Mensagem: * 
+                            <textarea name="msg"></textarea>
                         </label>
                         <br>
                         <button id="form-btn" type="submit">ENVIAR</button>
@@ -292,23 +292,36 @@
             <h1><i class="fa-brands fa-whatsapp"></i> Brot</h1>
         </div>
         <div id="popupwhatsmodal-body">
-            <h4 class="faleconosco">Fale conosco.</h4>
-            <a href="http://www.google.com">
+            <h4 class="faleconosco">Fale conosco</h4>
+            <a href="https://api.whatsapp.com/send?phone=554333278844">
                 <div>
-                    <p> Duque de Caxias <i class="fa-brands fa-whatsapp"></i></p> 
+                    <p> Duque de Caxias </p> <i class="fa-brands fa-whatsapp"></i>
                 </div>
             </a>
-            <a href="http://www.google.com">
+            <a href="https://api.whatsapp.com/send?phone=5543991230598">
                 <div>
-                    <p> Gleba Fazenda Palhano <i class="fa-brands fa-whatsapp"></i></p> 
+                    <p> Gleba Fazenda Palhano </p><i class="fa-brands fa-whatsapp"></i> 
                  </div>
             </a>
   
         </div>
     </div>
 
+    <div id="nav-hidden">
+        <div id="nav-hidden-btn"><i id="navclosebtn" class="fa-solid fa-circle-xmark"></i></div>
+        <ul>
+            <li><a href="#container-home">INICIO</a></li>
+            <li><a href="#content-about">SOBRE</a></li>
+            <li><a href="#content-address">ENDEREÇO E CONTATO</a></li>
+        </ul>
+    </div>
+
+
+
 </body>
 
 
 <script src="./scripts/app.js"></script>
 </html>
+
+

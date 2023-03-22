@@ -11,31 +11,46 @@ whatspopup.addEventListener('click', () => {
         setTimeout(closemodalfx, 700)
        
     } else {
-
         whatsmodal.style.display = 'flex';
         setTimeout(openmodalfx, 200)
-
     }
+
+    function closemodalfx() {
+        whatsmodal.style.height = '0px';
+    
+        setTimeout(closemodalfx2, 300)
+    
+    }
+    
+    function openmodalfx() {
+        whatsmodal.style.height = '350px';
+        setTimeout(openmodalheaderfx, 400)
+    }
+    
+    function openmodalheaderfx() {
+        whatsmodalheader.style.opacity = '1'
+        whatsmodalbody.style.opacity = '1'
+    }
+    
+    function closemodalfx2() {
+        whatsmodal.style.display = 'none';
+    }
+    
+})
+
+
+
+const navBtn = document.getElementById('navbar-list-hidden');
+const navHidden = document.getElementById('nav-hidden')
+
+navBtn.addEventListener('click', () => {
+    navHidden.style.transform = "translatey(0px)";
 
 })
 
-function closemodalfx() {
-    whatsmodal.style.height = '0px';
 
-    setTimeout(closemodalfx2, 300)
+const navCloseBtn = document.getElementById('navclosebtn');
 
-}
-
-function openmodalfx() {
-    whatsmodal.style.height = '350px';
-    setTimeout(openmodalheaderfx, 400)
-}
-
-function openmodalheaderfx() {
-    whatsmodalheader.style.opacity = '1'
-    whatsmodalbody.style.opacity = '1'
-}
-
-function closemodalfx2() {
-    whatsmodal.style.display = 'none';
-}
+navCloseBtn.addEventListener('click', () => {
+    navHidden.style.transform = "translatey(-400px)";
+})
