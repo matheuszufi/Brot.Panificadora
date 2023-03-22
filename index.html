@@ -246,22 +246,22 @@
                         <br>
                         <div id="name-email">
                             <label for="name">Nome: * 
-                                <input name="name" type="text">
+                                <input id='nomeemail'name="name" type="text" required>
                             </label>
                             <label for="email">Email: * 
-                                <input name="email" type="email">
+                                <input id='emailemail'name="email" type="email" required>
                             </label>
                         </div>
                         <br>
                         <label for="assunto">Assunto: * 
-                            <input name="assunto" type="text">
+                            <input id="subjectemail" name="assunto" type="text" required>
                         </label>
                         <br>
                         <label for="msg">Mensagem: * 
-                            <textarea name="msg"></textarea>
+                            <textarea id="messageemail" name="msg" required></textarea>
                         </label>
                         <br>
-                        <button id="form-btn" type="submit">ENVIAR</button>
+                        <button id="form-btn" type="submit" onclick="sendEmail()">ENVIAR</button>
                     </form>
                 </div>
     

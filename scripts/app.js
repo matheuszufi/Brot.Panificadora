@@ -54,3 +54,23 @@ const navCloseBtn = document.getElementById('navclosebtn');
 navCloseBtn.addEventListener('click', () => {
     navHidden.style.transform = "translatey(-300px)";
 })
+
+
+function sendEmail() {
+    const name = document.getElementById("nomeemail").value;
+    const email = document.getElementById("emailemail").value;
+    const subject = document.getElementById("subjectemail").value;
+    const message = document.getElementById("messageemail").value;
+  
+    Email.send({
+      Host: "smtp.sendgrid.net",
+      Username: "apikey",
+      Password: "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",
+      To: "matheuszufi@gmail.com",
+      From: email,
+      Subject: subject,
+      Body: `Nome: ${name}<br>E-mail: ${email}<br>Mensagem: ${message}`,
+    }).then(function (message) {
+      alert("Mensagem enviada com sucesso!");
+    });
+  }
