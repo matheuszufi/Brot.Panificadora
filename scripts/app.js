@@ -52,5 +52,5 @@ navBtn.addEventListener('click', () => {
 const navCloseBtn = document.getElementById('navclosebtn');
 
 navCloseBtn.addEventListener('click', () => {
-    navHidden.style.transform = "translatey(-400px)";
+    navHidden.style.transform = "translatey(-300px)";
 })
