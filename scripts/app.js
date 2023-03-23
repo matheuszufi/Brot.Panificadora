@@ -1,3 +1,5 @@
+const nodemailer = require('nodemailer');
+
 const whatspopup = document.getElementById('popupwhats')
 const whatsmodal = document.getElementById('popupwhatsmodal')
 const whatsmodalheader = document.getElementById('popupwhatsmodal-header')
@@ -56,21 +58,34 @@ navCloseBtn.addEventListener('click', () => {
 })
 
 
+let transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+        user: 'seuemail@gmail.com',
+        pass: 'suasenha'
+    }
+});
+
 function sendEmail() {
-    const name = document.getElementById("nomeemail").value;
-    const email = document.getElementById("emailemail").value;
-    const subject = document.getElementById("subjectemail").value;
-    const message = document.getElementById("messageemail").value;
-  
-    Email.send({
-      Host: "smtp.sendgrid.net",
-      Username: "apikey",
-      Password: "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",
-      To: "matheuszufi@gmail.com",
-      From: email,
-      Subject: subject,
-      Body: `Nome: ${name}<br>E-mail: ${email}<br>Mensagem: ${message}`,
-    }).then(function (message) {
-      alert("Mensagem enviada com sucesso!");
+    let name = document.getElementById('nomeemail').value;
+    let email = document.getElementById('emailemail').value;
+    let subject = document.getElementById('subjectemail').value;
+    let message = document.getElementById('messageemail').value;
+
+    let mailOptions = {
+        from: 'seuemail@gmail.com',
+        to: 'destinatario@gmail.com',
+        subject: subject,
+        text: `Nome: ${name}\nEmail: ${email}\n\nMensagem: ${message}`
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email enviado: ' + info.response);
+        }
     });
-  }
+}
