@@ -1,5 +1,4 @@
-const nodemailer = require('nodemailer');
-
+// Popup WhatsApp
 const whatspopup = document.getElementById('popupwhats')
 const whatsmodal = document.getElementById('popupwhatsmodal')
 const whatsmodalheader = document.getElementById('popupwhatsmodal-header')
@@ -42,50 +41,45 @@ whatspopup.addEventListener('click', () => {
 
 
 
+// Menu hamburguer - abrir e fechar
 const navBtn = document.getElementById('navbar-list-hidden');
-const navHidden = document.getElementById('nav-hidden')
+const navHidden = document.getElementById('nav-hidden');
 
-navBtn.addEventListener('click', () => {
-    navHidden.style.transform = "translatey(0px)";
-
-})
-
+if (navBtn) {
+    navBtn.addEventListener('click', () => {
+        console.log('Menu hamburguer clicado');
+        navHidden.style.transform = "translatey(0px)";
+    });
+}
 
 const navCloseBtn = document.getElementById('navclosebtn');
 
-navCloseBtn.addEventListener('click', () => {
-    navHidden.style.transform = "translatey(-300px)";
-})
+if (navCloseBtn) {
+    navCloseBtn.addEventListener('click', () => {
+        console.log('Botão fechar clicado');
+        navHidden.style.transform = "translatey(-300px)";
+    });
+}
 
-
-let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
-    auth: {
-        user: 'seuemail@gmail.com',
-        pass: 'suasenha'
-    }
+// Fechar menu ao clicar em um link
+const navLinks = document.querySelectorAll('#nav-hidden ul li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navHidden.style.transform = "translatey(-300px)";
+    });
 });
 
+
+// Função de envio de email (precisa de backend para funcionar)
 function sendEmail() {
     let name = document.getElementById('nomeemail').value;
     let email = document.getElementById('emailemail').value;
     let subject = document.getElementById('subjectemail').value;
     let message = document.getElementById('messageemail').value;
 
-    let mailOptions = {
-        from: 'seuemail@gmail.com',
-        to: 'destinatario@gmail.com',
-        subject: subject,
-        text: `Nome: ${name}\nEmail: ${email}\n\nMensagem: ${message}`
-    };
-
-    transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-            console.log(error);
-        } else {
-            console.log('Email enviado: ' + info.response);
-        }
-    });
+    // Por enquanto, apenas exibe um alerta
+    alert(`Mensagem recebida!\n\nNome: ${name}\nEmail: ${email}\nAssunto: ${subject}\n\nMensagem: ${message}`);
+    
+    // Para implementar o envio real, você precisará de um backend (PHP, Node.js, etc)
+    return false;
 }
